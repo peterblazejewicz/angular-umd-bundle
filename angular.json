@@ -1,0 +1,134 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "dashboards": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "projects/dashboards",
+      "sourceRoot": "projects/dashboards/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-builders/custom-webpack:browser",
+          "options": {
+            "customWebpackConfig": {
+              "path": "webpack.config.js"
+            },
+            "outputPath": "dist/dashboards",
+            "index": "projects/dashboards/src/index.html",
+            "main": "projects/dashboards/src/main.ts",
+            "polyfills": "projects/dashboards/src/polyfills.ts",
+            "tsConfig": "projects/dashboards/tsconfig.app.json",
+            "assets": [
+              "projects/dashboards/src/favicon.ico",
+              "projects/dashboards/src/assets",
+              {
+                "glob": "**/*",
+                "input": "dist/@angular",
+                "output": "/assets/@angular"
+              },
+              {
+                glob: "**/*",
+                input: "dist/rxjs",
+                output: "/assets/rxjs"
+              }
+            ],
+            "styles": ["projects/dashboards/src/styles.css"],
+            "scripts": [
+            ]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/dashboards/src/environments/environment.ts",
+                  "with": "projects/dashboards/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-builders/custom-webpack:dev-server",
+          "options": {
+            "browserTarget": "dashboards:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "dashboards:build:production"
+            },
+            "development": {
+              "browserTarget": "dashboards:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "dashboards:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-builders/custom-webpack:karma",
+          "options": {
+            "customWebpackConfig": {
+              "path": "webpack.config.js"
+            },
+            "main": "projects/dashboards/src/test.ts",
+            "polyfills": "projects/dashboards/src/polyfills.ts",
+            "tsConfig": "projects/dashboards/tsconfig.spec.json",
+            "karmaConfig": "projects/dashboards/karma.conf.js",
+            "assets": [
+              "projects/dashboards/src/favicon.ico",
+              "projects/dashboards/src/assets"
+            ],
+            "styles": ["projects/dashboards/src/styles.css"],
+            "scripts": [
+              "dist/rxjs/bundles/rxjs.umd.js",
+              "dist/rxjs/bundles/operators.umd.js",
+              "dist/@angular/compiler/bundles/compiler.umd.js",
+              "dist/@angular/animations/bundles/animations.umd.js",
+              "dist/@angular/core/bundles/core.umd.js",
+              "dist/@angular/common/bundles/common.umd.js",
+              "dist/@angular/common/bundles/common-http.umd.js",
+              "dist/@angular/forms/bundles/forms.umd.js",
+              "dist/@angular/platform-browser/bundles/platform-browser.umd.js",
+              "dist/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js",
+              "dist/@angular/router/bundles/router.umd.js"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "dashboards"
+}
