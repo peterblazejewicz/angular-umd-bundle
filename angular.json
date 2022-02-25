@@ -34,14 +34,13 @@
                 "output": "/assets/@angular"
               },
               {
-                glob: "**/*",
-                input: "dist/rxjs",
-                output: "/assets/rxjs"
+                "glob": "**/*",
+                "input": "dist/rxjs",
+                "output": "/assets/rxjs"
               }
             ],
             "styles": ["projects/dashboards/src/styles.css"],
-            "scripts": [
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
