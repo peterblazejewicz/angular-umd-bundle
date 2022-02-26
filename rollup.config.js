@@ -208,6 +208,7 @@ export default [
       format: "umd",
       name: "ngrx.store-devtools",
       globals: {
+        "@ngrx/store-devtools": "ngrx.store-devtools",
         "@ngrx/store": "ngrx.store",
         "@angular/core": "ng.core",
         rxjs: "rxjs",

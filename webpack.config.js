@@ -17,6 +17,8 @@ module.exports = (config, options) => {
     "@angular/router": "ng.router",
     "rxjs/operators": "rxjs.operators",
     rxjs: "rxjs",
+    "@ngrx/store": "ngrx.store",
+    "@ngrx/store-devtools": `ngrx["store-devtools"]`,
   };
   return config;
 };
