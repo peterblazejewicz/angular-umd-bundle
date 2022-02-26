@@ -218,4 +218,19 @@ export default [
     },
     external: ["@angular/core", "@ngrx/store", "rxjs", "rxjs/operators"],
   },
+  // highcharts-angular
+  {
+    input: "./node_modules/highcharts-angular/fesm2015/highcharts-angular.mjs",
+    output: {
+      file: "./dist/highcharts-angular/highcharts-angular.umd.js",
+      format: "umd",
+      name: "highcharts-angular",
+      globals: {
+        "highcharts-angular": "highcharts-angular",
+        "@angular/core": "ng.core",
+      },
+      plugins,
+    },
+    external: ["@angular/core"],
+  },
 ];

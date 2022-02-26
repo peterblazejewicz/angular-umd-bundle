@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
+import * as Highcharts from 'highcharts';
 import { GoogleBooksService } from '../book-list/books.service';
 import { addBook, removeBook, retrievedBookList } from '../state/books.actions';
 import { selectBookCollection, selectBooks } from '../state/books.selectors';
@@ -10,6 +11,16 @@ import { selectBookCollection, selectBooks } from '../state/books.selectors';
   styleUrls: ['./scripts.component.css'],
 })
 export class ScriptsComponent implements OnInit {
+  Highcharts = Highcharts;
+
+  chartOptions: Highcharts.Options = {
+    series: [
+      {
+        data: [1, 2, 3],
+        type: 'line',
+      },
+    ],
+  };
   books$ = this.store.select(selectBooks);
   bookCollection$ = this.store.select(selectBookCollection)!;
 

@@ -19,6 +19,7 @@ module.exports = (config, options) => {
     rxjs: "rxjs",
     "@ngrx/store": "ngrx.store",
     "@ngrx/store-devtools": `ngrx["store-devtools"]`,
+    "highcharts-angular": `window["highcharts-angular"]`,
   };
   return config;
 };

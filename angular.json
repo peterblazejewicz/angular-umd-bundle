@@ -42,6 +42,16 @@
                 "glob": "**/*",
                 "input": "dist/@ngrx",
                 "output": "/assets/@ngrx"
+              },
+              {
+                "glob": "**/highcharts.js",
+                "input": "node_modules/highcharts",
+                "output": "/assets/highcharts"
+              },
+              {
+                "glob": "**/*",
+                "input": "dist/highcharts-angular",
+                "output": "/assets/highcharts-angular"
               }
             ],
             "styles": ["projects/dashboards/src/styles.css"],
@@ -129,7 +139,9 @@
               "dist/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js",
               "dist/@angular/router/bundles/router.umd.js",
               "dist/@ngrx/store/bundles/ngrx-store.umd.js",
-              "dist/@ngrx/store/bundles/ngrx-store-devtools.umd.js"
+              "dist/@ngrx/store/bundles/ngrx-store-devtools.umd.js",
+              "node_modules/highcharts/highcharts.js",
+              "dist/highcharts-angular/highcharts-angular.umd.js"
             ]
           }
         }

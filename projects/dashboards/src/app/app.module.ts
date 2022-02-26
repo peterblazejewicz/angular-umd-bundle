@@ -12,6 +12,7 @@ import { booksReducer } from './state/books.reducer';
 import { collectionReducer } from './state/collection.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
+import { HighchartsChartModule } from 'highcharts-angular';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { environment } from '../environments/environment';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HighchartsChartModule,
     HttpClientModule,
     StoreModule.forRoot({ books: booksReducer, collection: collectionReducer }),
     StoreDevtoolsModule.instrument({
