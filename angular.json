@@ -37,6 +37,11 @@
                 "glob": "**/*",
                 "input": "dist/rxjs",
                 "output": "/assets/rxjs"
+              },
+              {
+                "glob": "**/*",
+                "input": "dist/@ngrx",
+                "output": "/assets/@ngrx"
               }
             ],
             "styles": ["projects/dashboards/src/styles.css"],
@@ -122,7 +127,9 @@
               "dist/@angular/forms/bundles/forms.umd.js",
               "dist/@angular/platform-browser/bundles/platform-browser.umd.js",
               "dist/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js",
-              "dist/@angular/router/bundles/router.umd.js"
+              "dist/@angular/router/bundles/router.umd.js",
+              "dist/@ngrx/store/bundles/ngrx-store.umd.js",
+              "dist/@ngrx/store/bundles/ngrx-store-devtools.umd.js"
             ]
           }
         }

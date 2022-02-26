@@ -1,8 +1,7 @@
 import { terser } from "rollup-plugin-terser";
 
 const mangle = true;
-const plugins = 
-[
+const plugins = [
   terser({
     mangle,
   }),
@@ -182,5 +181,40 @@ export default [
       plugins,
     },
     external: ["@angular/core", "@angular/common", "rxjs", "rxjs/operators"],
+  },
+  // ngrx
+  {
+    input: "./node_modules/@ngrx/store/fesm2015/ngrx-store.mjs",
+    output: {
+      file: "./dist/@ngrx/store/bundles/ngrx-store.umd.js",
+      format: "umd",
+      name: "ngrx.store",
+      globals: {
+        "@ngrx/store": "ngrx.store",
+        "@angular/core": "ng.core",
+        rxjs: "rxjs",
+        "rxjs/operators": "rxjs.operators",
+      },
+      plugins,
+    },
+    external: ["@angular/core", "rxjs", "rxjs/operators"],
+  },
+  // ngrx-dev-tools
+  {
+    input:
+      "./node_modules/@ngrx/store-devtools/fesm2015/ngrx-store-devtools.mjs",
+    output: {
+      file: "./dist/@ngrx/store/bundles/ngrx-store-devtools.umd.js",
+      format: "umd",
+      name: "ngrx.store-devtools",
+      globals: {
+        "@ngrx/store": "ngrx.store",
+        "@angular/core": "ng.core",
+        rxjs: "rxjs",
+        "rxjs/operators": "rxjs.operators",
+      },
+      plugins,
+    },
+    external: ["@angular/core", "@ngrx/store", "rxjs", "rxjs/operators"],
   },
 ];

@@ -19,15 +19,18 @@
     "@angular/platform-browser": "~13.2.4",
     "@angular/platform-browser-dynamic": "~13.2.4",
     "@angular/router": "~13.2.4",
+    "@ngrx/store": "^13.0.2",
     "rxjs": "~7.4.0",
     "tslib": "^2.3.0",
-    "zone.js": "~0.11.4"
+    "zone.js": "~0.11.4",
+    "@ngrx/store-devtools": "^13.0.2"
   },
   "devDependencies": {
     "@angular-builders/custom-webpack": "^13.1.0",
     "@angular-devkit/build-angular": "~13.2.5",
     "@angular/cli": "~13.2.5",
     "@angular/compiler-cli": "~13.2.4",
+    "@ngrx/store-devtools": "^13.0.2",
     "@types/jasmine": "~3.10.0",
     "@types/node": "^12.11.1",
     "@types/webpack": "^5.28.0",

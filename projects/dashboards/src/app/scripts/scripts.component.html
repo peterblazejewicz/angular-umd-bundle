@@ -11,3 +11,18 @@
   <li><code>npm run build:rollup</code></li>
   <li><code>npm build</code></li>
 </ol>
+
+<h2>Books</h2>
+<app-book-list
+  class="book-list"
+  [books]="(books$ | async)!"
+  (add)="onAdd($event)"
+></app-book-list>
+
+<h2>My Collection</h2>
+<app-book-collection
+  class="book-collection"
+  [books]="($any(bookCollection$) | async)!"
+  (remove)="onRemove($event)"
+>
+</app-book-collection>
