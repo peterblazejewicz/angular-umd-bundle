@@ -199,6 +199,24 @@ export default [
     },
     external: ["@angular/core", "rxjs", "rxjs/operators"],
   },
+  // ngrx/effects
+  {
+    input: "./node_modules/@ngrx/effects/fesm2015/ngrx-effects.mjs",
+    output: {
+      file: "./dist/@ngrx/effects/bundles/ngrx-effects.umd.js",
+      format: "umd",
+      name: "ngrx.effects",
+      globals: {
+        "@ngrx/effects": "ngrx.effects",
+        "@ngrx/store": "ngrx.store",
+        "@angular/core": "ng.core",
+        rxjs: "rxjs",
+        "rxjs/operators": "rxjs.operators",
+      },
+      plugins,
+    },
+    external: ["@angular/core", "rxjs", "rxjs/operators", "@ngrx/store"],
+  },
   // ngrx-dev-tools
   {
     input:
