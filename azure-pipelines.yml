@@ -15,8 +15,16 @@ steps:
     versionSpec: '16.x'
   displayName: 'Install Node.js'
 
+- task: Cache@2
+  inputs:
+    key: 'package-lock.json'
+    path: 'node_modules'
+
+- task: Npm@1
+  inputs:
+    command: 'ci'
+
 - script: |
-    npm ci
     npm run build:rollup
     npm run build
   displayName: 'npm install and build'
