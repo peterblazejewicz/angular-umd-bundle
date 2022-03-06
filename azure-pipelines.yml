@@ -23,8 +23,10 @@ steps:
 - task: Npm@1
   inputs:
     command: 'ci'
+  displayName: 'npm ci'
 
-- script: |
-    npm run build:rollup
-    npm run build
-  displayName: 'npm install and build'
+- script: npm run build:rollup
+  displayName: 'build UMD packages'
+
+- script: npm run build
+  displayName: 'build application'
